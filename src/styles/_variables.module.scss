@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Raleway:wght@100;200;300;400;500;600;700&display=swap");
+
+//FONTS
+
+$font-orbitron: "Orbitron", sans-serif;
+$font-rajdhani: "Rajdhani", sans-serif;
+$font-raleway: "Raleway", sans-serif;
+
+//COLORS
+
+:root {
+  --bg-color: white;
+  --color-font: #2d1d04;
+  --color-primary: #2d1d04;
+  --color-primary-light: #6b5025;
+  --color-secondary-dark: #04002f;
+  --color-secondary: #4b8078;
+  --color-secondary-light: #c3fcf2;
+  --color-grey: #4d4d4d;
+  --color-grey-dark: #1e1e1e;
+}

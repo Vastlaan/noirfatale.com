@@ -1,0 +1,67 @@
+@import "../main.module.scss";
+.page {
+  padding: 2rem;
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  @include respond(m) {
+    flex-direction: row;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    @include respond(m) {
+      flex-direction: column;
+    }
+
+    margin: 2rem auto;
+
+    a {
+      text-decoration: none;
+    }
+    li {
+      min-width: 15rem;
+      text-align: center;
+      display: block;
+      color: var(--bg-color);
+      padding: 1rem 3rem;
+      border: 1px solid var(--bg-color);
+      border-radius: 3px;
+      font-family: $font-rajdhani;
+      font-size: 2rem;
+      letter-spacing: 0.3rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin: 1rem 2rem;
+
+      &:hover {
+        transform: rotate(-3deg) scale(1.1);
+      }
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    @include respond(m) {
+      justify-content: center;
+    }
+    p {
+      text-align: center;
+      font-family: $font-rajdhani;
+      font-size: 1.6rem;
+      font-weight: 300;
+      letter-spacing: 0.2rem;
+      color: var(--bg-color);
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--color-secondary-light);
+    }
+  }
+}

@@ -1,11 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Noir Fatale Dark Electronics`,
+    description: `Noir Fatale is the dark electronic music project with elements of trance and retro-noir mood.`,
+    author: `Michal Antczak`,
+    keywords: `music, dark house, dark electronic music, new retro, noir fatale, michal antczak `,
+    image: "/src/images/noirfatale.jpg",
+    siteUrl: "https://www.noirfatale.com",
+    robots: `index, follow`,
+    image: `/noirfatale.png`,
+    canonicalUrl: `https://www.noirfatale.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -15,16 +22,18 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Noir Fatale Dark Electronics`,
+        short_name: `Noir Fatale`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#2d1d04`,
+        theme_color: `#2d1d04`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/moth.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -1,35 +1,43 @@
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import PropTypes from "prop-types"
 import React from "react"
+import Image from "gatsby-image"
+import { graphql, useStaticQuery } from "gatsby"
+import { RiMenu4Line } from "react-icons/ri"
+import styles from "../styles/components/header.module.scss"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Header = ({ siteTitle }) => {
+  const data = useStaticQuery(graphql`
+    {
+      logo: file(relativePath: { eq: "moth.png" }) {
+        name
+        image: childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+  return (
+    <header className={styles.header}>
+      <AniLink fade to="/" className={styles.header__logo}>
+        <Image fluid={data.logo.image.fluid} alt={data.logo.name} />
+      </AniLink>
+      <div className={styles.header__name}>
+        <h1>Noir Fatale</h1>
+      </div>
+      <div className={styles.header__buttons}>
+        <a href="mailto:info@michalantczak.com">
+          <RiMenu4Line />
+        </a>
+      </div>
+      <div className={styles.header__sub}>
+        <h2>Dark Electronics</h2>
+      </div>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

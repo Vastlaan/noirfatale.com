@@ -1,18 +1,28 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
-import "./layout.css"
+import Nav from "../components/Nav"
+import Footer from "../components/Footer"
+import CookiesMessage from "../components/CookiesMessage"
+
+import "../styles/main.module.scss"
 
 const Layout = ({ children }) => {
+  const [displayCookies, setDisplayCookies] = useState(true)
+
+  useEffect(() => {
+    if (localStorage.getItem("noirfatalecookiepolicy")) {
+      const cookiePolicy = JSON.parse(
+        localStorage.getItem("noirfatalecookiepolicy")
+      )
+
+      if (cookiePolicy.agreed) {
+        setDisplayCookies(false)
+      }
+    }
+  }, [])
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,20 +36,12 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+      <Nav />
+      {children}
+      <Footer />
+      {displayCookies ? (
+        <CookiesMessage setDisplayCookies={setDisplayCookies} />
+      ) : null}
     </>
   )
 }

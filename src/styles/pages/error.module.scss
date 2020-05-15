@@ -1,0 +1,18 @@
+@import "../main.module.scss";
+.error {
+  min-height: 40rem;
+  padding: 2rem;
+
+  h1 {
+    font-family: $font-rajdhani;
+    font-size: 4rem;
+    font-weight: 400;
+    color: var(--color-secondary-dark);
+  }
+
+  p {
+    font-family: $font-raleway;
+    font-size: 3rem;
+    color: var(--color-secondary);
+  }
+}

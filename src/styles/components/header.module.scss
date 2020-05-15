@@ -1,0 +1,68 @@
+@import "../main.module.scss";
+
+.header {
+  display: grid;
+  grid-template-columns: 10rem 1fr 10rem;
+  padding: 0rem 2rem;
+
+  @include respond(xs) {
+    grid-template-columns: 7rem 1fr 7rem;
+  }
+
+  & > * {
+    align-self: center;
+  }
+
+  &__logo {
+    grid-column: 1/2;
+  }
+  &__name {
+    grid-column: 2/3;
+    margin: 0 1rem;
+
+    h1 {
+      text-align: center;
+      font-family: $font-orbitron;
+      font-size: 4.5rem;
+      letter-spacing: 0.5rem;
+      font-weight: 100;
+      line-height: 1;
+      text-shadow: 0.4rem 0.4rem 0.4rem rgba(0, 0, 0, 0.3);
+      color: var(--color-primary);
+      @include respond(s) {
+        font-size: 4rem;
+      }
+    }
+  }
+  &__buttons {
+    grid-column: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      text-decoration: none;
+      transition: all 0.3s;
+      color: var(--color-primary);
+
+      & > * {
+        font-size: 4rem;
+      }
+
+      &:hover {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__sub {
+    grid-column: 1/4;
+    text-align: center;
+    h2 {
+      font-family: $font-orbitron;
+      font-size: 2.5rem;
+      letter-spacing: 0.2rem;
+      color: var(--color-primary-light);
+      line-height: 1;
+    }
+  }
+}
