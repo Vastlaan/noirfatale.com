@@ -1,12 +1,12 @@
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from "react"
 import Image from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 import { RiMenu4Line } from "react-icons/ri"
 import styles from "../styles/components/header.module.scss"
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, renderMenu, setRenderMenu }) => {
   const data = useStaticQuery(graphql`
     {
       logo: file(relativePath: { eq: "moth.png" }) {
@@ -28,12 +28,40 @@ const Header = ({ siteTitle }) => {
         <h1>Noir Fatale</h1>
       </div>
       <div className={styles.header__buttons}>
-        <a href="mailto:info@michalantczak.com">
+        <button onClick={() => setRenderMenu(prevState => !prevState)}>
           <RiMenu4Line />
-        </a>
+        </button>
       </div>
       <div className={styles.header__sub}>
         <h2>Dark Electronics</h2>
+      </div>
+
+      <div
+        className={styles.menu}
+        style={renderMenu ? { height: "13.5rem" } : { height: "0rem" }}
+      >
+        <ul>
+          <li>
+            <AniLink fade to="/" className={styles.header__logo}>
+              Music
+            </AniLink>
+          </li>
+          <li>
+            <AniLink fade to="/lyrics" className={styles.header__logo}>
+              Lyrics
+            </AniLink>
+          </li>
+          <li>
+            <AniLink fade to="/contact" className={styles.header__logo}>
+              Contact
+            </AniLink>
+          </li>
+          <li>
+            <AniLink fade to="/about" className={styles.header__logo}>
+              About
+            </AniLink>
+          </li>
+        </ul>
       </div>
     </header>
   )

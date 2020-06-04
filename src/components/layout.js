@@ -10,6 +10,7 @@ import "../styles/main.module.scss"
 
 const Layout = ({ children }) => {
   const [displayCookies, setDisplayCookies] = useState(true)
+  const [renderMenu, setRenderMenu] = useState(false)
 
   useEffect(() => {
     if (localStorage.getItem("noirfatalecookiepolicy")) {
@@ -35,8 +36,12 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <Nav />
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        renderMenu={renderMenu}
+        setRenderMenu={setRenderMenu}
+      />
+      <Nav renderMenu={renderMenu} />
       {children}
       <Footer />
       {displayCookies ? (

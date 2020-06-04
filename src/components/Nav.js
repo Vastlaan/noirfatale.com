@@ -2,9 +2,15 @@ import React from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import styles from "../styles/components/nav.module.scss"
 
-const Nav = () => {
+const Nav = ({ renderMenu }) => {
   return (
-    <nav>
+    <nav
+      style={
+        renderMenu
+          ? { margin: "27.5rem 0 2rem 0" }
+          : { margin: "13.5rem 0 2rem 0" }
+      }
+    >
       <ul className={styles.list}>
         <AniLink fade to="/">
           <li>Music</li>

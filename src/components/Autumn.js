@@ -27,6 +27,8 @@ function AutumnAlbum() {
   const [displayedName, setDisplayedName] = useState("Noir Fatale - Autumn")
 
   const play = () => {
+    const allAudio = document.querySelectorAll("audio")
+    allAudio.forEach(a => a.pause())
     audio.current.play()
   }
   const stop = () => {

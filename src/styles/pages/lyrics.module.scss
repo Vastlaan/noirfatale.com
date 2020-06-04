@@ -16,10 +16,17 @@
   padding: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @include respond(s) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .text {
   padding: 2rem;
   font-family: $font-raleway;
   font-size: 2rem;
+  @include respond(s) {
+    text-align: center;
+  }
 }
