@@ -62,6 +62,10 @@ function SEO({ description, lang, meta, title }) {
           content: metaCanonicalUrl,
         },
         {
+          property: `og:image`,
+          content: metaImage,
+        },
+        {
           property: `og:title`,
           content: title,
         },
