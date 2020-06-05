@@ -7,7 +7,7 @@ module.exports = {
     image: "/src/images/noirfatale.jpg",
     siteUrl: "https://www.noirfatale.com",
     robots: `index, follow`,
-    image: `/noirfatale.png`,
+    image: `https://noirfatale.s3.eu-west-3.amazonaws.com/img/noirfatale.jpg`,
     canonicalUrl: `https://www.noirfatale.com`,
   },
   plugins: [
@@ -26,7 +26,7 @@ module.exports = {
         // The property ID; the tracking code won't be generated without it
         trackingId: "UA-132849357-1",
         // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: false,
+        head: true,
       },
     },
     `gatsby-transformer-sharp`,
