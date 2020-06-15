@@ -28,7 +28,10 @@ const Header = ({ siteTitle, renderMenu, setRenderMenu }) => {
         <h1>Noir Fatale</h1>
       </div>
       <div className={styles.header__buttons}>
-        <button onClick={() => setRenderMenu(prevState => !prevState)}>
+        <button
+          onClick={() => setRenderMenu(prevState => !prevState)}
+          style={renderMenu ? { transform: "rotate(90deg)" } : null}
+        >
           <RiMenu4Line />
         </button>
       </div>
@@ -38,7 +41,7 @@ const Header = ({ siteTitle, renderMenu, setRenderMenu }) => {
 
       <div
         className={styles.menu}
-        style={renderMenu ? { height: "13.5rem" } : { height: "0rem" }}
+        style={renderMenu ? { height: "20rem" } : { height: "0rem" }}
       >
         <ul>
           <li>

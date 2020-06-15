@@ -7,7 +7,7 @@ const Nav = ({ renderMenu }) => {
     <nav
       style={
         renderMenu
-          ? { margin: "27.5rem 0 2rem 0" }
+          ? { margin: "35rem 0 2rem 0" }
           : { margin: "13.5rem 0 2rem 0" }
       }
     >

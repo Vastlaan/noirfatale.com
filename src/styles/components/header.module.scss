@@ -60,6 +60,10 @@
         outline: none;
         cursor: pointer;
       }
+      &:focus,
+      :active {
+        outline: none;
+      }
     }
   }
 
@@ -84,6 +88,7 @@
   ul {
     list-style: none;
     padding: 1rem;
+    margin-top: 2rem;
     li {
       a {
         text-decoration: none;
@@ -92,6 +97,10 @@
         color: var(--color-primary-dark);
         &:hover {
           color: var(--color-secondary);
+        }
+        @include respond(m) {
+          font-size: 2.5rem;
+          margin: 2rem 0;
         }
       }
     }
