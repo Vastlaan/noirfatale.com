@@ -6,6 +6,10 @@
   align-items: center;
   margin: 2rem auto;
   padding: 2rem;
+
+  @include respond(m) {
+    margin-top: 10.7rem;
+  }
 }
 
 .album {
@@ -48,7 +52,7 @@
   h3 {
     font-family: $font-orbitron;
     font-size: 3rem;
-    font-weight: 300;
+    font-weight: 800;
     letter-spacing: 0.2rem;
     text-align: center;
     color: var(--color-primary);
@@ -88,7 +92,7 @@
   h4 {
     font-family: $font-rajdhani;
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 600;
     letter-spacing: 0.2rem;
   }
 }

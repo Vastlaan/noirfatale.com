@@ -1,6 +1,10 @@
 @import "../main.module.scss";
 
 nav {
+
+  @include respond('m'){
+    display: none;
+  }
 }
 
 .list {

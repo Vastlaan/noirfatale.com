@@ -1,16 +1,25 @@
 @import "../main.module.scss";
+
+main{
+
+  @include respond('m'){
+    margin-top: 10.7rem;
+  }
+}
 .header {
   display: inline-block;
   padding: 2rem;
   color: var(--color-primary);
   font-family: $font-orbitron;
   font-size: 3rem;
-  font-weight: 400;
+  font-weight: 800;
   text-transform: uppercase;
   border-bottom: 1px solid var(--color-primary);
   border-right: 1px solid var(--color-primary);
   border-radius: 3px;
   margin: 2rem;
+  box-shadow: .2rem .2rem .3rem rgba(0,0,0,.6);
+
 }
 .volume {
   padding: 2rem;

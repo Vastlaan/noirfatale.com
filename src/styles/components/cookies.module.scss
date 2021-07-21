@@ -7,22 +7,22 @@
 
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 
   width: 100%;
-  padding: 2rem;
-  background-color: #494d4e;
+  padding: 1.4rem;
+  background-color: #222;
   animation: pullOut 1s linear;
   transition: all 1s;
 
   p {
     font-family: $font-rajdhani;
-    font-size: 2rem;
+    font-size: 1.9rem;
     letter-spacing: 0.2rem;
     color: snow;
 
     a {
-      text-decoration: none;
-      color: var(--color-secondary);
+      color: skyblue;
     }
   }
 
@@ -36,6 +36,7 @@
     font-size: 2.5rem;
     cursor: pointer;
     transition: all 0.3s;
+    margin-left: auto;
 
     &:hover {
       background-color: seagreen;

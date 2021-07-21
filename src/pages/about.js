@@ -58,17 +58,17 @@ const About = () => {
             <Image fluid={data.me2.image.fluid} name={data.me2.name} />
           </div>
           <div className={styles.social}>
-            <h2>Find Noir Fatale</h2>
+            <h2>Follow me on social media</h2>
             <div>
-              <h3>On Youtube</h3>
+              <h3>Youtube</h3>
               <a href="https://www.youtube.com/channel/UCClsAvUH0nthUDzKpc0sYtg">
-                <FiYoutube style={{ color: "red", fontSize: "10rem" }} />
+                <FiYoutube style={{ color: "red", fontSize: "6.7rem" }} />
               </a>
             </div>
             <div>
-              <h3>On Soundcloud</h3>
+              <h3>Soundcloud</h3>
               <a href="https://soundcloud.com/micha-antczak-329856988">
-                <FaSoundcloud style={{ color: "orange", fontSize: "10rem" }} />
+                <FaSoundcloud style={{ color: "orange", fontSize: "6.7rem" }} />
               </a>
             </div>
           </div>

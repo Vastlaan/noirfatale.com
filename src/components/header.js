@@ -41,7 +41,7 @@ const Header = ({ siteTitle, renderMenu, setRenderMenu }) => {
 
       <div
         className={styles.menu}
-        style={renderMenu ? { height: "20rem" } : { height: "0rem" }}
+        style={renderMenu ? { height: "35rem" } : { height: "0rem" }}
       >
         <ul>
           <li>
