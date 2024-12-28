@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "../styles/components/cookies.module.scss"
+import * as styles from "../styles/components/cookies.module.scss"
 
 function CookiesMessage({ setDisplayCookies }) {
   return (

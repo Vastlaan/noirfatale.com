@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
-import styles from "../styles/components/main.module.scss"
+import { useStaticQuery, graphql, Image } from "gatsby"
+import * as styles from "../styles/components/main.module.scss"
 import {
   TiMediaPlayOutline,
   TiMediaPauseOutline,
@@ -15,6 +14,7 @@ import Serenity from "../audio/mefedron/Noir Fatale - Serenity of the raising su
 import Anthem from "../audio/mefedron/Noir Fatale - Anthem of ancestors.mp3"
 import Farwell from "../audio/mefedron/Noir Fatale - Farewell kiss.mp3"
 import Romance from "../audio/mefedron/Noir Fatale - Romance with nature.mp3"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 function Mefedron() {
   const audio = useRef()
@@ -107,7 +107,8 @@ function Mefedron() {
   return (
     <div className={styles.album}>
       <div className={styles.image}>
-        <Image fluid={data.backlight.image.fluid} alt={data.backlight.name} />
+        <GatsbyImage
+         fluid={data.backlight.image.fluid} alt={data.backlight.name} />
       </div>
 
       <div className={styles.all}>

@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
-import styles from "../styles/components/main.module.scss"
+import { useStaticQuery, graphql, Image } from "gatsby"
+import * as styles from "../styles/components/main.module.scss"
 import {
   TiMediaPlayOutline,
   TiMediaPauseOutline,
@@ -14,6 +13,7 @@ import Master from "../audio/lust/Noir Fatale - Master your lusts.mp3"
 import Arachnofobia from "../audio/lust/Noir Fatale - Arachnofobia.mp3"
 import Luna from "../audio/lust/Noir Fatale - Luna.mp3"
 import Equilibrium from "../audio/lust/Noir Fatale - Equilibrium.mp3"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 function Lust() {
   const audio = useRef()
@@ -106,7 +106,7 @@ function Lust() {
   return (
     <div className={styles.album}>
       <div className={styles.image}>
-        <Image fluid={data.noir.image.fluid} alt={data.noir.name} />
+        <GatsbyImage fluid={data.noir.image.fluid} alt={data.noir.name} />
       </div>
 
       <div className={styles.all}>

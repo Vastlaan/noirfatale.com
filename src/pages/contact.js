@@ -1,14 +1,14 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import styles from "../styles/pages/contact.module.scss"
+import Seo from "../components/Seo"
+import * as styles from "../styles/pages/contact.module.scss"
 import { MdCall, MdMailOutline } from "react-icons/md"
 import { AiOutlineGlobal } from "react-icons/ai"
 
 const Contact = () => {
   return (
     <Layout>
-      <SEO title="Contact" />
+      <Seo title="Contact" />
       <main>
         <h1 className={styles.header}>Contact</h1>
         <p className={styles.info}>

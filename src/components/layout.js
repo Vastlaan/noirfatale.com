@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Nav from "../components/Nav"
@@ -50,9 +49,4 @@ const Layout = ({ children }) => {
     </>
   )
 }
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
 export default Layout

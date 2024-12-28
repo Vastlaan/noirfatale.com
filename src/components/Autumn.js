@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
-import styles from "../styles/components/main.module.scss"
+import { useStaticQuery, graphql, Image } from "gatsby"
+import * as styles from "../styles/components/main.module.scss"
 import {
   TiMediaPlayOutline,
   TiMediaPauseOutline,
@@ -15,6 +14,7 @@ import BornToDie from "../audio/autumn/Noir Fatale - Born to die.mp3"
 import Radion from "../audio/autumn/Noir Fatale - Radion.mp3"
 import TenderSuicide from "../audio/autumn/Noir Fatale - Tender suicide.mp3"
 import TheBeautyOfItAll from "../audio/autumn/Noir Fatale - The beauty of it all.mp3"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 function AutumnAlbum() {
   const audio = useRef()
@@ -102,7 +102,7 @@ function AutumnAlbum() {
   return (
     <div className={styles.album}>
       <div className={styles.image}>
-        <Image fluid={data.angel.image.fluid} alt={data.angel.name} />
+        <GatsbyImage fluid={data.angel.image.fluid} alt={data.angel.name} />
       </div>
 
       <div className={styles.all}>

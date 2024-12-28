@@ -1,10 +1,8 @@
-import AniLink from "gatsby-plugin-transition-link/AniLink"
-import PropTypes from "prop-types"
-import React, { useState } from "react"
-import Image from "gatsby-image"
-import { graphql, useStaticQuery } from "gatsby"
+import React from "react"
+import { graphql, useStaticQuery, Link, Image } from "gatsby"
 import { RiMenu4Line } from "react-icons/ri"
-import styles from "../styles/components/header.module.scss"
+import * as styles from "../styles/components/header.module.scss"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const Header = ({ siteTitle, renderMenu, setRenderMenu }) => {
   const data = useStaticQuery(graphql`
@@ -21,9 +19,9 @@ const Header = ({ siteTitle, renderMenu, setRenderMenu }) => {
   `)
   return (
     <header className={styles.header}>
-      <AniLink fade to="/" className={styles.header__logo}>
-        <Image fluid={data.logo.image.fluid} alt={data.logo.name} />
-      </AniLink>
+      <Link fade to="/" className={styles.header__logo}>
+        <GatsbyImage fluid={data.logo.image.fluid} alt={data.logo.name} />
+      </Link>
       <div className={styles.header__name}>
         <h1>Noir Fatale</h1>
       </div>
@@ -45,37 +43,29 @@ const Header = ({ siteTitle, renderMenu, setRenderMenu }) => {
       >
         <ul>
           <li>
-            <AniLink fade to="/" className={styles.header__logo}>
+            <Link fade to="/" className={styles.header__logo}>
               Music
-            </AniLink>
+            </Link>
           </li>
           <li>
-            <AniLink fade to="/lyrics" className={styles.header__logo}>
+            <Link fade to="/lyrics" className={styles.header__logo}>
               Lyrics
-            </AniLink>
+            </Link>
           </li>
           <li>
-            <AniLink fade to="/contact" className={styles.header__logo}>
+            <Link fade to="/contact" className={styles.header__logo}>
               Contact
-            </AniLink>
+            </Link>
           </li>
           <li>
-            <AniLink fade to="/about" className={styles.header__logo}>
+            <Link fade to="/about" className={styles.header__logo}>
               About
-            </AniLink>
+            </Link>
           </li>
         </ul>
       </div>
     </header>
   )
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Header

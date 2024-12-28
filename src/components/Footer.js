@@ -1,26 +1,26 @@
 import React from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
-import styles from "../styles/components/footer.module.scss"
+import { Link } from "gatsby"
+import * as styles from "../styles/components/footer.module.scss"
 
 function Footer() {
   return (
     <footer className={styles.page}>
       <ul>
-        <AniLink fade to="/">
+        <Link fade to="/">
           <li>Music</li>
-        </AniLink>
-        <AniLink fade to="/lyrics">
+        </Link>
+        <Link fade to="/lyrics">
           <li>Lyrics</li>
-        </AniLink>
-        <AniLink fade to="/about">
+        </Link>
+        <Link fade to="/about">
           <li>About</li>
-        </AniLink>
-        <AniLink fade to="/contact">
+        </Link>
+        <Link fade to="/contact">
           <li>Contact</li>
-        </AniLink>
-        <AniLink fade to="/cookies">
+        </Link>
+        <Link fade to="/cookies">
           <li>Cookies</li>
-        </AniLink>
+        </Link>
       </ul>
       <div>
         <p>

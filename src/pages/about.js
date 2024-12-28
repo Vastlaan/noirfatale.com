@@ -1,12 +1,12 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import styles from "../styles/pages/about.module.scss"
-import Image from "gatsby-image"
-import { useStaticQuery, graphql } from "gatsby"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import Seo from "../components/Seo"
+import * as styles from "../styles/pages/about.module.scss"
+import { useStaticQuery, graphql, Image } from "gatsby"
+import { Link } from "gatsby"
 import { FiYoutube } from "react-icons/fi"
 import { FaSoundcloud } from "react-icons/fa"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const About = () => {
   const data = useStaticQuery(graphql`
@@ -31,7 +31,7 @@ const About = () => {
   `)
   return (
     <Layout>
-      <SEO title="About" />
+      <Seo title="About" />
       <main>
         <article className={styles.page}>
           <div className={styles.description}>
@@ -47,15 +47,15 @@ const About = () => {
               As none of the production contains its vocal track, some of them
               have been written with lyrics. Those lyrics you will find in the
               section{" "}
-              <AniLink fade to="/lyrics">
+              <Link fade to="/lyrics">
                 Lyrics
-              </AniLink>{" "}
+              </Link>{" "}
               of this website.
             </p>
             <p></p>
           </div>
           <div className={styles.newImage}>
-            <Image fluid={data.me2.image.fluid} name={data.me2.name} />
+            <GatsbyImage fluid={data.me2.image.fluid} name={data.me2.name} />
           </div>
           <div className={styles.social}>
             <h2>Follow me on social media</h2>

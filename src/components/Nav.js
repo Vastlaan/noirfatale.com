@@ -1,6 +1,6 @@
 import React from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
-import styles from "../styles/components/nav.module.scss"
+import { Link } from "gatsby"
+import * as styles from "../styles/components/nav.module.scss"
 
 const Nav = ({ renderMenu }) => {
   return (
@@ -12,19 +12,19 @@ const Nav = ({ renderMenu }) => {
       }
     >
       <ul className={styles.list}>
-        <AniLink fade to="/">
+        <Link fade to="/">
           <li>Music</li>
-        </AniLink>
+        </Link>
 
-        <AniLink fade to="/lyrics">
+        <Link fade to="/lyrics">
           <li>Lyrics</li>
-        </AniLink>
-        <AniLink fade to="/about">
+        </Link>
+        <Link fade to="/about">
           <li>About</li>
-        </AniLink>
-        <AniLink fade to="/contact">
+        </Link>
+        <Link fade to="/contact">
           <li>Contact</li>
-        </AniLink>
+        </Link>
       </ul>
     </nav>
   )

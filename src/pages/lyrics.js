@@ -1,12 +1,12 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import styles from "../styles/pages/lyrics.module.scss"
+import Seo from "../components/Seo"
+import * as styles from "../styles/pages/lyrics.module.scss"
 
 function Lyrics() {
   return (
     <Layout>
-      <SEO title="Lyrics" />
+      <Seo title="Lyrics" />
       <main>
         <h1 className={styles.header}>Lyrics</h1>
         <div className={styles.volume}>

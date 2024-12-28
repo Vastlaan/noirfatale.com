@@ -1,8 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
-import styles from "../styles/pages/cookies.module.scss"
+import * as styles from "../styles/pages/cookies.module.scss"
 
-const privacy = () => {
+const Privacy = () => {
   return (
     <Layout>
       <section className={styles.page}>
@@ -238,4 +238,4 @@ const privacy = () => {
   )
 }
 
-export default privacy
+export default Privacy
